@@ -1102,6 +1102,14 @@
   })();
 
   /* ================================================================
+     RESET — visita el link amb ?reset per netejar les visites
+  ================================================================ */
+  if (new URLSearchParams(window.location.search).has('reset')) {
+    localStorage.removeItem(STORAGE_KEY);
+    window.location.replace(window.location.pathname);
+  }
+
+  /* ================================================================
      INIT
   ================================================================ */
   mostrarDataAvui();
